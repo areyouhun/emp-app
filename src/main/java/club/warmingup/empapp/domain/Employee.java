@@ -26,6 +26,7 @@ public class Employee {
     private String name;
 
     @ManyToOne
+    @JoinColumn(nullable = false, name = "team_id")
     private Team team;
 
     @Column(nullable = false)
