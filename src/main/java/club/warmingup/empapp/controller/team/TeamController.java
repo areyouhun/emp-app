@@ -20,19 +20,12 @@ public class TeamController {
     private final TeamService teamService;
 
     @PostMapping("/team")
-    public void saveTeam(@RequestParam("name") String teamName) {
-        checkIfEmpty(teamName);
-        teamService.save(teamName);
+    public void saveTeam(@RequestParam String name) {
+        teamService.save(name);
     }
 
     @GetMapping("/teams")
     public List<teamsResponse> getTeams() {
         return teamService.findAll();
-    }
-
-    private void checkIfEmpty(String requestParam) {
-        if (requestParam == null || requestParam.isBlank()) {
-            throw new IllegalArgumentException("입력된 값이 없습니다.");
-        }
     }
 }

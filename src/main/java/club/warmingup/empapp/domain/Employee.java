@@ -38,4 +38,12 @@ public class Employee {
 
     @Column(nullable = false)
     private LocalDate birthday;
+
+    public Employee(String name, Team team, Role role, LocalDate workStartDate, LocalDate birthday) {
+        this.name = name;
+        this.team = team;
+        this.role = role;
+        this.workStartDate = workStartDate;
+        this.birthday = birthday;
+    }
 }
