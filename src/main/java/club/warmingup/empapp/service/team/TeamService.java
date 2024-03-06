@@ -1,7 +1,7 @@
 package club.warmingup.empapp.service.team;
 
 import club.warmingup.empapp.domain.Team;
-import club.warmingup.empapp.dto.team.teamsResponse;
+import club.warmingup.empapp.dto.team.TeamResponse;
 import club.warmingup.empapp.repository.team.TeamRepository;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -24,9 +24,9 @@ public class TeamService {
     }
 
     @Transactional(readOnly = true)
-    public List<teamsResponse> findAll() {
+    public List<TeamResponse> findAll() {
         return teamRepository.findAll().stream()
-                                        .map(teamsResponse::new)
+                                        .map(TeamResponse::new)
                                         .collect(Collectors.toList());
     }
 }

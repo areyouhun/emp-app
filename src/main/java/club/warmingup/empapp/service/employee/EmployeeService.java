@@ -3,8 +3,11 @@ package club.warmingup.empapp.service.employee;
 import club.warmingup.empapp.domain.Employee;
 import club.warmingup.empapp.domain.Team;
 import club.warmingup.empapp.dto.employee.EmployeeCreateRequest;
+import club.warmingup.empapp.dto.team.TeamResponse;
 import club.warmingup.empapp.repository.employee.EmployeeRepository;
 import club.warmingup.empapp.repository.team.TeamRepository;
+import java.util.List;
+import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,5 +29,12 @@ public class EmployeeService {
                                         request.getWorkStartDate(),
                                         request.getBirthday());
         employeeRepository.save(employee);
+    }
+
+    @Transactional(readOnly = true)
+    public List<EmployeeResponse> findAll() {
+        return employeeRepository.findAll().stream()
+                                            .map(EmployeeResponse::new)
+                                            .collect(Collectors.toList());
     }
 }

@@ -6,12 +6,12 @@ import club.warmingup.empapp.domain.Team;
 import lombok.Data;
 
 @Data
-public class teamsResponse {
+public class TeamResponse {
     private String name;
     private String manager;
     private int memberCount;
 
-    public teamsResponse(Team team) {
+    public TeamResponse(Team team) {
         this.name = team.getName();
         this.manager = getManager(team);
         this.memberCount = team.countEmployees();
