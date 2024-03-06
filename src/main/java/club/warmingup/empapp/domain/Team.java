@@ -29,6 +29,10 @@ public class Team {
     @OneToMany(mappedBy = "team", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Employee> employees = new ArrayList<>();
 
+    public Team(String name) {
+        this.name = name;
+    }
+
     public int countEmployees() {
         return employees.size();
     }

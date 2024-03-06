@@ -7,8 +7,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -16,8 +19,20 @@ import org.springframework.web.bind.annotation.RestController;
 public class TeamController {
     private final TeamService teamService;
 
+    @PostMapping("/team")
+    public void saveTeam(@RequestParam("name") String teamName) {
+        checkIfEmpty(teamName);
+        teamService.save(teamName);
+    }
+
     @GetMapping("/teams")
     public List<teamsResponse> getTeams() {
         return teamService.findAll();
+    }
+
+    private void checkIfEmpty(String requestParam) {
+        if (requestParam == null || requestParam.isBlank()) {
+            throw new IllegalArgumentException("입력된 값이 없습니다.");
+        }
     }
 }

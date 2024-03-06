@@ -14,6 +14,15 @@ import org.springframework.transaction.annotation.Transactional;
 public class TeamService {
     private final TeamRepository teamRepository;
 
+    @Transactional
+    public void save(String name) {
+        if (teamRepository.existsByName(name)) {
+            throw new IllegalArgumentException("이미 존재하는 팀 이름입니다.");
+        }
+
+        teamRepository.save(new Team(name));
+    }
+
     @Transactional(readOnly = true)
     public List<teamsResponse> findAll() {
         return teamRepository.findAll().stream()
