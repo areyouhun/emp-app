@@ -195,6 +195,11 @@ https://github.com/areyouhun/emp-app/blob/d3eee45b71aaf88b5332863e6013f481c64b75
 
 <br>
 
+#### \[직원 응답용 DTO\]
+https://github.com/areyouhun/emp-app/blob/d3eee45b71aaf88b5332863e6013f481c64b75e2/src/main/java/club/warmingup/empapp/service/employee/EmployeeResponse.java#L8-L23
+
+<br>
+
 <table>
   <tr>
     <td width="50%">
@@ -219,8 +224,3 @@ https://github.com/areyouhun/emp-app/blob/d3eee45b71aaf88b5332863e6013f481c64b75
     </td>
   </tr>
 </table>
-
-<br>
-
-#### \[직원 응답용 DTO\]
-https://github.com/areyouhun/emp-app/blob/d3eee45b71aaf88b5332863e6013f481c64b75e2/src/main/java/club/warmingup/empapp/service/employee/EmployeeResponse.java#L8-L23
