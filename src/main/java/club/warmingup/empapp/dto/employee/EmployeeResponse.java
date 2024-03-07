@@ -1,4 +1,4 @@
-package club.warmingup.empapp.service.employee;
+package club.warmingup.empapp.dto.employee;
 
 import club.warmingup.empapp.domain.Employee;
 import club.warmingup.empapp.domain.Role;

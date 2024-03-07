@@ -3,7 +3,7 @@ package club.warmingup.empapp.service.employee;
 import club.warmingup.empapp.domain.Employee;
 import club.warmingup.empapp.domain.Team;
 import club.warmingup.empapp.dto.employee.EmployeeCreateRequest;
-import club.warmingup.empapp.dto.team.TeamResponse;
+import club.warmingup.empapp.dto.employee.EmployeeResponse;
 import club.warmingup.empapp.repository.employee.EmployeeRepository;
 import club.warmingup.empapp.repository.team.TeamRepository;
 import java.util.List;

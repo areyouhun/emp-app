@@ -1,7 +1,7 @@
 package club.warmingup.empapp.controller.employee;
 
 import club.warmingup.empapp.dto.employee.EmployeeCreateRequest;
-import club.warmingup.empapp.service.employee.EmployeeResponse;
+import club.warmingup.empapp.dto.employee.EmployeeResponse;
 import club.warmingup.empapp.service.employee.EmployeeService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
